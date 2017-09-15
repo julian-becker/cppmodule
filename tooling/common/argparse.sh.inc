@@ -28,5 +28,5 @@ function optarg {
 }
 
 function realpath {
-	cd $1 ; pwd -P
+	echo $(cd $1 ; pwd -P)
 }
