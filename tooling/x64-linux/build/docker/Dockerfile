@@ -11,10 +11,13 @@ RUN cd `mktemp -d` \
 
 RUN mkdir /build
 
-VOLUME /src
+VOLUME /work
 VOLUME /install
 
 WORKDIR /build
 
-CMD cmake -DCMAKE_INSTALL_PREFIX:PATH=/install /src \
+CMD cmake \
+      -DCMAKE_INSTALL_PREFIX:PATH=/install \
+      -DCMAKE_EXPORT_COMPILE_COMMANDS:BOOL=ON \
+      /work \
  && cmake --build . --target install -- -j`nproc`

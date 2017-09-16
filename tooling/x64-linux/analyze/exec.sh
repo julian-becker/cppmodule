@@ -3,11 +3,9 @@ SCRIPTPATH=$( cd $(dirname $0) ; pwd -P )
 ROOT=$SCRIPTPATH/../../..
 
 mkdir -p $ROOT/build
-mkdir -p $ROOT/install
 
 docker run \
 	--rm \
 	-v $ROOT/:/work \
 	-v $ROOT/build:/build \
-	-v $ROOT/install:/install \
-	-it build-linux-x64
+	-it analyze-linux-x64
