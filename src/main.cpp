@@ -1,5 +1,6 @@
+#include <mymodule/mymodule.h>
 #include <iostream>
 
-int main() {
+void say_hello() {
 	std::cout << "Hello World!" << std::endl;
 }
